@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+	body{
+		background:white;
+		border:0;
+		margin:0;
+		padding:0;
+		box-sizing: border-box;
+		animation-name:timeOfDay;
+		animation-duration: 8s; 
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes moving{
+		0%{
+			transform:translate(-10svw,0);
+		}
+
+		100%{
+			transform:translate(100vw,0);
+		}
+	}
+
+	@keyframes walk_one{
+		0%{
+			transform:rotate(-10deg);
+		}
+		50%{
+			transform:rotate(10deg);
+		}
+		100%{
+			transform:rotate(-10deg);
+		}
+	}
+
+	@keyframes walk_two{
+		0%{
+			transform:rotate(10deg);
+		}
+		50%{
+			transform:rotate(-10deg);
+		}
+		100%{
+			transform:rotate(10deg);
+		}
+	}
+
+	@keyframes timeOfDay{
+		0%{
+			background-color: #E4E0FA;
+		}
+		20%{
+			background-color: #8cfff9;
+		}
+		40%{
+			background-color: #f1ff87;
+		}
+		60%{
+			background-color: #FFBB73;
+		}
+		80%{
+			background-color: #AA73FF;
+		}
+		100%{
+			background-color: #312291;
+		}
+
+
+	}
+
+	#wrapper{
+		position: relative;
+		width: 100px;
+		height: 400px;
+		animation-name: moving;
+		animation-duration: 8s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+	}
+
+	#head{
+		background-color:blue;
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+
+	}
+
+	#body{
+		background-color:black;
+		width: 100px;
+		height:150px;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+	}
+
+	.leg{
+		width:100px;
+		display: inline-block;
+
+	}
+
+	#leg_1{
+		background-color:pink;
+		width: 50px;
+		height: 150px;
+		animation-name: walk_one;
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+
+	}
+
+	#leg_2{
+		background-color:magenta;
+		width: 50px;
+		height: 150px;
+		animation-name: walk_two;
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+		
+	}
+
+	.foot{
+		background-color: black;
+		width:50px;
+		height:30px;
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		bottom: 0;
+		position: absolute;
+	}
+
+	#ground{
+		width: 100vw;
+		height:10px;
+		background-color: #696969;
+	}
+
+
+
+</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="head"></div>
+		<div id="body"></div>
+		<div class="leg" id="leg_1">
+			<div class="foot"></div>
+		</div
+		><div class="leg" id="leg_2">
+			<div class="foot"></div>
+		</div>
+	</div>
+	<div id="ground"></div>
+
+</body>
+</html>
